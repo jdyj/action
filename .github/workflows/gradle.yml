@@ -44,8 +44,9 @@ jobs:
       run: chmod +x ./gradlew
 
     - name: Build with jib
-      run: ./gradlew jib \
-          -Djib.to.image="jdyj/githubtest:${GITHUB_REF##*/}"
+      run: |
+        ./gradlew jib \
+        -Djib.to.image="jdyj/githubtest:${GITHUB_REF##*/}"
 
 
   dependency-submission:
